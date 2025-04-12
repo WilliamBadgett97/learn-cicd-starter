@@ -14,10 +14,10 @@ func TestGetApiKey(t *testing.T) {
 		"Authorization": []string{"ApiKey "},
 	}
 	type test struct {
-        input http.Header
-        want  string
-    }
-	tests := []test {
+		input http.Header
+		want  string
+	}
+	tests := []test{
 		{input: headerTestOne, want: "12345-abcde-67890-fghij"},
 		{input: headerTestTwo, want: ""},
 	}
@@ -27,7 +27,7 @@ func TestGetApiKey(t *testing.T) {
 			t.Fatal(err)
 		}
 		if !reflect.DeepEqual(tc.want, got) {
-            t.Fatalf("expected: %v, got: %v", tc.want, got)
-        }
+			t.Fatalf("expected: %v, got: %v", tc.want, got)
+		}
 	}
 }
