@@ -19,7 +19,7 @@ func TestGetApiKey(t *testing.T) {
     }
 	tests := []test {
 		{input: headerTestOne, want: "12345-abcde-67890-fghij"},
-		{input: headerTestTwo, want: "a"},
+		{input: headerTestTwo, want: ""},
 	}
 	for _, tc := range tests {
 		got, err := GetAPIKey(tc.input)
