@@ -20,9 +20,3 @@ jobs
     
     - name: Build
       run: scripts/buildprod.sh
-
-
-# It should have a single job called Deploy
-# It should checkout the code
-# It should set up the Go toolchain
-# It should build the app using the scripts/buildprod.sh script
