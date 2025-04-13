@@ -1,0 +1,28 @@
+name: cd
+on:
+  push:
+    branches: [main]
+
+jobs
+  deploy:
+  name: deploy
+  runs-on: ubuntu-latest
+  timeout-minutes: 30
+
+  steps:
+    - name: Set up go
+      uses: actions/setup-go@v2
+      with:
+        go-version: "1.20"
+        
+    - name: Check out repository
+      uses: action/checkout@v2
+    
+    - name: Build
+      run: scripts/buildprod.sh
+
+
+# It should have a single job called Deploy
+# It should checkout the code
+# It should set up the Go toolchain
+# It should build the app using the scripts/buildprod.sh script
