@@ -20,6 +20,8 @@ jobs:
 
       - name: Run Tests
         run: go test ./internal/auth -cover
+      - name: Install gosec
+        run: go install github.com/securego/gosec/v2/cmd/gosec@latest
 
   style:
     name: Style
